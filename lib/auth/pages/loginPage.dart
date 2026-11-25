@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:signup_login_1/widgets/backgrounddecoration.dart';
+import 'package:signup_login_1/widgets/footersection.dart';
 import 'package:signup_login_1/widgets/login_from_fields.dart';
+import 'package:signup_login_1/widgets/loginbutton.dart';
 import 'package:signup_login_1/widgets/loginheader.dart';
+import 'package:signup_login_1/widgets/socialloginsection.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -49,13 +52,27 @@ class LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       loginHeader(darkColor: darkTextColor, bodyColor: bodyTextColor),
+
                       SizedBox(height: 48,),
+
                       LoginFromFields(
                         bodyColor: bodyTextColor,
                         primaryColor: primaryColor,
                         darkColor: darkTextColor,
                         borderColor: borderColor,
-                        isPasswordVisible: isPasswordVisible,)
+                        isPasswordVisible: isPasswordVisible,),
+
+                      SizedBox(height: 20,),
+
+                      Loginbutton(btnColor: primaryColor),
+
+                      SizedBox(height: 12,),
+
+                      SocialLoginSection(bodyColor: bodyTextColor, darkColor: darkTextColor, borderColor: borderColor),
+
+                      SizedBox(height: 10,),
+
+                      FooterSection(primaryColor: primaryColor, bodyColor: bodyTextColor)
                     ],
                   ),
                 ))

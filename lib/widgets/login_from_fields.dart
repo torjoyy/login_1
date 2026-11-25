@@ -21,7 +21,14 @@ class LoginFromFields extends StatelessWidget {
       crossAxisAlignment: .start,
       children: [
         label("Email address"),
-        inputField(Icons.mail_outline_outlined, "Enter your email")
+        inputField(Icons.mail_outline_outlined, "Enter your email"),
+
+        SizedBox(height: 12,),
+        
+        label("Password"),
+        inputField(Icons.lock_open_rounded, "Enter your password",
+        isPassword: true, suffix: IconButton(onPressed: (){}, icon: Icon(isPasswordVisible ? Icons.visibility_rounded : Icons.visibility_off_rounded,
+        size: 20, color: bodyColor,))),
       ],
     );
   }
